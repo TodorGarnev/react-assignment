@@ -5,14 +5,22 @@
 	justify-content: center;
 	list-style-type: none;
 	background-color: blueviolet;
-	color: #fff;
 }
 
 .navigation .headerItem {
 	padding: 1rem;
 }
 
-.navigation .headerItem:hover {
+.navigation .headerItem a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.navigation .headerItem a.active {
+	color: #000;
+}
+
+.navigation .headerItem a:hover {
 	cursor: pointer;
 	color: #000;
 }
