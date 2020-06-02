@@ -1,14 +1,17 @@
-import * as React from 'react';
+import React, { FunctionComponent } from "react";
 import styles from './Weather.module.css';
+
+import Day from './Day/Day';
+import { weekDays } from '../../constants/constant';
 
 interface Props { }
 
-const Weather: React.FunctionComponent<Props> = (props) => {
-	return (
-		<section>
-            Week Days
-		</section>
-	);
+const Weather: FunctionComponent<Props> = (props) => {
+    return (
+        <section className={styles.weatherContainer}>
+            {weekDays.map(weekDay => <Day name={weekDay} />)}
+        </section>
+    );
 };
 
 export default Weather;

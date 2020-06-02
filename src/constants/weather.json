@@ -1,0 +1,79 @@
+[
+    {
+        "weekDayName": "Monday",
+        "iconName": "sun",
+        "temperature": {
+            "min": 9,
+            "max": 18
+        },
+        "rainStatusPerc": 0,
+        "sunrise": "2020-06-02T05:50:00.122Z",
+        "wind": 0.5
+    },
+    {
+        "weekDayName": "TuesDay",
+        "iconName": "clouds",
+        "temperature": {
+            "min": 6,
+            "max": 15
+        },
+        "rainStatusPerc": 10,
+        "sunrise": "2020-06-02T05:50:00.122Z",
+        "wind": 3.5
+    },
+    {
+        "weekDayName": "Wednesday",
+        "iconName": "clouds_rain",
+        "temperature": {
+            "min": 5,
+            "max": 12
+        },
+        "rainStatusPerc": 75,
+        "sunrise": "2020-06-02T05:50:00.122Z",
+        "wind": 5.5
+    },
+    {
+        "weekDayName": "Thursday",
+        "iconName": "storm",
+        "temperature": {
+            "min": 3,
+            "max": 10
+        },
+        "rainStatusPerc": 57,
+        "sunrise": "2020-06-02T05:49:00.122Z",
+        "wind": 11
+    },
+    {
+        "weekDayName": "Friday",
+        "iconName": "sun_clouds",
+        "temperature": {
+            "min": 9,
+            "max": 16
+        },
+        "rainStatusPerc": 22,
+        "sunrise": "2020-06-02T05:49:00.122Z",
+        "wind": 4
+    },
+    {
+        "weekDayName": "Saturday",
+        "iconName": "clouds",
+        "temperature": {
+            "min": 7,
+            "max": 13
+        },
+        "rainStatusPerc": 31,
+        "sunrise": "2020-06-02T05:48:00.122Z",
+        "wind": 1
+    },
+    {
+        "weekDayName": "Sunday",
+        "iconName": "sun",
+        "temperature": {
+            "min": 9,
+            "max": 20
+        },
+        "rainStatusPerc": 5,
+        "sunrise": "2020-06-02T05:48:00.122Z",
+        "wind": 0
+    }
+]

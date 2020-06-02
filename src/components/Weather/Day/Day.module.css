@@ -1,0 +1,18 @@
+.dayContainer {
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 3px #ccc;
+}
+
+.dayContainer .dayName {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.dayContainer .weatherIcon {
+    border-bottom: 1px solid #ccc;
+}
+
+.dayContainer .dayTemperature {
+}

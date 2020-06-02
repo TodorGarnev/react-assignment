@@ -1,9 +1,9 @@
-import * as React from 'react';
+import React, { FunctionComponent } from "react";
 import styles from './Header.module.css';
 
 interface Props { }
 
-const Header: React.FunctionComponent<Props> = (props) => {
+const Header: FunctionComponent<Props> = (props) => {
 	return (
 		<nav>
 			<ul className={styles.navigation}>

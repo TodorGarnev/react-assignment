@@ -1,0 +1,6 @@
+.weatherContainer {
+    margin: 2rem auto;
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+}
