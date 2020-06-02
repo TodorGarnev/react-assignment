@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import styles from './Day.module.css';
 
-import { weatherIcons } from '../../../shared/enums/icons';
+import { weatherIconsName } from '../../../shared/constants/icons';
 
 import sun from '../../../assets/images/sun.png';
 import sunClouds from '../../../assets/images/sun_clouds.png';
@@ -17,19 +17,14 @@ interface Props {
 }
 
 const Day: FunctionComponent<Props> = (props) => {
-	const iconsUrl: any = { sun, clouds, cloudsRain, storm, sunClouds };
-	// const test: weatherIcons = props.icon;
-
-	// console.log('iconsUrl >>', iconsUrl[props.icon]);
-	// console.log('weatherIcons >>', weatherIcons[test]);
-	console.log('icon >>', props.icon);
+	const iconsUrl: { [key: string]: string } = { sun, clouds, cloudsRain, storm, sunClouds };
+	const iconName: string = weatherIconsName[props.icon];
 
 	return (
 		<div className={styles.dayContainer}>
 			<div className={styles.dayName}>{props.name}</div>
 			<div className={styles.weatherIcon}>
-				{/* <img src={iconsUrl.weatherIcons[props.icon]} alt={props.icon} /> */}
-				<img src={cloudsRain} alt="test"/>
+				<img src={iconsUrl[iconName]} alt={props.icon} />
 			</div>
 			<div className={styles.dayTemperature}>
 				<span className={styles.minTemperature}>{props.minTemp} &#8451;</span>
