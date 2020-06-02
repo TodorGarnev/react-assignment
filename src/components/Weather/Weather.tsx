@@ -2,14 +2,21 @@ import React, { FunctionComponent } from "react";
 import styles from './Weather.module.css';
 
 import Day from './Day/Day';
-import { weekDays } from '../../constants/constant';
+import weatherData from '../../data/weather.json';
 
 interface Props { }
 
 const Weather: FunctionComponent<Props> = (props) => {
     return (
         <section className={styles.weatherContainer}>
-            {weekDays.map(weekDay => <Day name={weekDay} />)}
+            {weatherData.map((weekDay, index) =>
+                <Day
+                    key={index}
+                    name={weekDay.weekDayName}
+                    minTemp={weekDay.temperature.min}
+                    maxTemp={weekDay.temperature.max}
+                />)
+            }
         </section>
     );
 };

@@ -5,14 +5,25 @@
     box-shadow: 0 2px 3px #ccc;
 }
 
-.dayContainer .dayName {
+.dayName {
     padding: 0.5rem;
     border-bottom: 1px solid #ccc;
 }
 
-.dayContainer .weatherIcon {
+.weatherIcon {
     border-bottom: 1px solid #ccc;
 }
 
-.dayContainer .dayTemperature {
+.dayTemperature {
+    padding: 0.5rem;
+}
+
+.minTemperature {
+    margin-right: 0.3rem;
+    color: dodgerblue;
+}
+
+.maxTemperature {
+    margin-left: 0.3rem;
+    color: tomato;
 }
