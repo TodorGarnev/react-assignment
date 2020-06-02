@@ -1,11 +1,15 @@
 import React from 'react';
 import './App.css';
 
-import Header from './components/Header//Header';
+import Header from './components/Header/Header';
+import Weather from './components/Weather/Weather'
 
 const App = () => {
   return (
-    <Header />
+    <React.Fragment>
+      <Header />
+      <Weather />
+    </React.Fragment>
   );
 }
 
