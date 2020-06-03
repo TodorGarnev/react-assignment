@@ -1,13 +1,14 @@
 import React, { FunctionComponent } from "react";
 import styles from './Brackets.module.css';
 
-
-interface Props { }
-
-const Brackets: FunctionComponent<Props> = (props) => {
+const Brackets: FunctionComponent = () => {
 	return (
-		<section>
-            Brackets assignment
+		<section className={styles.bracketsContainer}>
+			<div className={styles.inputContainer}>
+				<input className={styles.input} type="text" placeholder="Enter code with brackets" />
+				<div className={styles.message}>Message</div>
+			</div>
+			<button className={styles.validationButton} type="button">Validate</button>
 		</section>
 	);
 };

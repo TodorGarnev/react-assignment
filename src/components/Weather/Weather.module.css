@@ -23,5 +23,5 @@
 .switchButton:active,
 .switchButton:focus {
 	border: none;
-	outline-color: initial;
+	outline-color: blueviolet;
 }
