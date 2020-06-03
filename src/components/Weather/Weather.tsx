@@ -24,8 +24,8 @@ const Weather: FunctionComponent = () => {
 		const modifiedData = data.map(day => ({
 			...day,
 			temperature: {
-				min: tempType === TempType.Celsius ? toggleTemperature(day.temperature.min, false) : toggleTemperature(day.temperature.min, true),
-				max: tempType === TempType.Celsius ? toggleTemperature(day.temperature.max, false) : toggleTemperature(day.temperature.max, true)
+				min: toggleTemperature(day.temperature.min, tempType),
+				max: toggleTemperature(day.temperature.max, tempType)
 			}
 		}));
 
