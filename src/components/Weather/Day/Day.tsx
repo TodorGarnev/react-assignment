@@ -14,6 +14,10 @@ interface Props {
 	minTemp: number;
 	maxTemp: number;
 	icon: string;
+	sunrise: string;
+	rainStatus: number;
+	wind: number;
+	tempType: string;
 }
 
 const Day: FunctionComponent<Props> = (props) => {
@@ -27,9 +31,14 @@ const Day: FunctionComponent<Props> = (props) => {
 				<img src={iconsUrl[iconName]} alt={props.icon} />
 			</div>
 			<div className={styles.dayTemperature}>
-				<span className={styles.minTemperature}>{props.minTemp} &#8451;</span>
+				<span className={styles.minTemperature}>{props.minTemp} {props.tempType}</span>
 				|
-				<span className={styles.maxTemperature}>{props.maxTemp} &#8457;</span>
+				<span className={styles.maxTemperature}>{props.maxTemp} {props.tempType}</span>
+			</div>
+			<div className={styles.additionalInfo}>
+				<div className={styles.sunrise}>{props.sunrise}</div>
+				<div className={styles.rainStatus}>{props.rainStatus}%</div>
+				<div className={styles.wind}>{props.wind} m/s</div>
 			</div>
 		</div>
 	);
