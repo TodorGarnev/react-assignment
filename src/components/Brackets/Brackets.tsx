@@ -5,7 +5,7 @@ const Brackets: FunctionComponent = () => {
 	const [input, setInput] = useState('');
 	const [message, setMessage] = useState('');
 
-	const checkBrackets = (inputStr: any) => {
+	const checkBrackets = (inputStr: any): void => {
 		const openedBracketsList: string[] = [];
 
 		for (let index in inputStr) {

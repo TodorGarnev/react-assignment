@@ -13,7 +13,15 @@ const TempType = {
 
 const Weather: FunctionComponent = () => {
 	const [tempType, setTempType] = useState(TempType.Celsius);
+	const [selectedDay, setSelectedDay] = useState('');
 
+	const setActiveDay = (dayName: string): void => {
+		if (dayName === selectedDay) {
+			setSelectedDay('');
+		} else {
+			setSelectedDay(dayName);
+		}
+	}
 
 	return (
 		<React.Fragment>
@@ -29,11 +37,12 @@ const Weather: FunctionComponent = () => {
 						rainStatus={weekDay.rainStatusPerc}
 						wind={weekDay.wind}
 						tempType={tempType}
+						isActive={weekDay.weekDayName === selectedDay}
+						activeDay={setActiveDay}
 					/>)
 				}
 			</section>
 			<button className={styles.switchButton} type="button" onClick={() => setTempType(TempType.Fahrenheit)}>Switch to {tempType}</button>
-			{toggleTemperature(120, false).toFixed(0)}
 		</React.Fragment>
 	);
 };

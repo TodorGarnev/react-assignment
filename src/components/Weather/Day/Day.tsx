@@ -18,6 +18,8 @@ interface Props {
 	rainStatus: number;
 	wind: number;
 	tempType: string;
+	isActive: boolean;
+	activeDay: Function;
 }
 
 const Day: FunctionComponent<Props> = (props) => {
@@ -27,7 +29,7 @@ const Day: FunctionComponent<Props> = (props) => {
 	return (
 		<div className={styles.dayContainer}>
 			<div className={styles.dayName}>{props.name}</div>
-			<div className={styles.weatherIcon}>
+			<div className={styles.weatherIcon} onClick={() => props.activeDay(props.name)}>
 				<img src={iconsUrl[iconName]} alt={props.icon} />
 			</div>
 			<div className={styles.dayTemperature}>
@@ -35,11 +37,14 @@ const Day: FunctionComponent<Props> = (props) => {
 				|
 				<span className={styles.maxTemperature}>{props.maxTemp} {props.tempType}</span>
 			</div>
-			<div className={styles.additionalInfo}>
-				<div className={styles.sunrise}>{props.sunrise}</div>
-				<div className={styles.rainStatus}>{props.rainStatus}%</div>
-				<div className={styles.wind}>{props.wind} m/s</div>
-			</div>
+			{
+				props.isActive &&
+				<div className={styles.additionalInfo}>
+					<div className={styles.sunrise}>{props.sunrise}</div>
+					<div className={styles.rainStatus}>{props.rainStatus}%</div>
+					<div className={styles.wind}>{props.wind} m/s</div>
+				</div>
+			}
 		</div>
 	);
 };
