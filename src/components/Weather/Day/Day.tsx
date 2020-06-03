@@ -33,9 +33,13 @@ const Day: FunctionComponent<Props> = (props) => {
 				<img src={iconsUrl[iconName]} alt={props.icon} />
 			</div>
 			<div className={styles.dayTemperature}>
-				<span className={styles.minTemperature}>{props.minTemp} {props.tempType}</span>
+				<span className={styles.minTemperature}>
+					{(props.minTemp).toFixed(0)} {props.tempType}
+				</span>
 				|
-				<span className={styles.maxTemperature}>{props.maxTemp} {props.tempType}</span>
+				<span className={styles.maxTemperature}>
+					{(props.maxTemp).toFixed(0)} {props.tempType}
+				</span>
 			</div>
 			{
 				props.isActive &&

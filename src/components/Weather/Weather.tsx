@@ -5,15 +5,12 @@ import Day from './Day/Day';
 import weatherData from '../../shared/data/weather.json';
 import dateTransform from '../../shared/utility/dateTransform';
 import toggleTemperature from '../../shared/utility/celsiusToFahrenheit';
-
-const TempType = {
-	Celsius: 'C', //'&#8451;',
-	Fahrenheit: 'F' //'&#8457;'
-};
+import { TempType } from '../../shared/enums/temperature';
 
 const Weather: FunctionComponent = () => {
 	const [tempType, setTempType] = useState(TempType.Celsius);
 	const [selectedDay, setSelectedDay] = useState('');
+	const [data, setData] = useState(weatherData);
 
 	const setActiveDay = (dayName: string): void => {
 		if (dayName === selectedDay) {
@@ -23,10 +20,28 @@ const Weather: FunctionComponent = () => {
 		}
 	}
 
+	const tempTransform = () => {
+		const modifiedData = data.map(day => ({
+			...day,
+			temperature: {
+				min: tempType === TempType.Celsius ? toggleTemperature(day.temperature.min, false) : toggleTemperature(day.temperature.min, true),
+				max: tempType === TempType.Celsius ? toggleTemperature(day.temperature.max, false) : toggleTemperature(day.temperature.max, true)
+			}
+		}));
+
+		if (tempType === TempType.Celsius) {
+			setTempType(TempType.Fahrenheit);
+		} else {
+			setTempType(TempType.Celsius);
+		}
+
+		setData(modifiedData);
+	}
+
 	return (
 		<React.Fragment>
 			<section className={styles.weatherContainer}>
-				{weatherData.map((weekDay, index) =>
+				{data.map((weekDay, index) =>
 					<Day
 						key={index}
 						name={weekDay.weekDayName}
@@ -42,7 +57,9 @@ const Weather: FunctionComponent = () => {
 					/>)
 				}
 			</section>
-			<button className={styles.switchButton} type="button" onClick={() => setTempType(TempType.Fahrenheit)}>Switch to {tempType}</button>
+			<button className={styles.switchButton} type="button" onClick={() => tempTransform()}>
+				Switch to {tempType === TempType.Celsius ? TempType.Fahrenheit : TempType.Celsius}
+			</button>
 		</React.Fragment>
 	);
 };
