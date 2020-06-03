@@ -28,7 +28,8 @@ const Brackets: FunctionComponent = () => {
 				if ((lastOpenedBracket === '[' && char !== ']') ||
 					(lastOpenedBracket === '(' && char !== ')') ||
 					(lastOpenedBracket === '{' && char !== '}')) {
-						setMessage('Incorrect number or order of brackets');
+					setMessage('Incorrect number or order of brackets');
+					return;
 				}
 			}
 		}
@@ -36,9 +37,10 @@ const Brackets: FunctionComponent = () => {
 		if (openedBracketsList.length !== 0) {
 			setMessage('Incorrect number or order of brackets');
 			return;
-		}
+		} else {
+			setMessage('Correct order and number of brackets');
 
-		setMessage('Correct order and number of brackets');
+		}
 	};
 
 	return (
