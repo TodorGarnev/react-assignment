@@ -1,7 +1,7 @@
 # React Assignment
 
 ### Demo
-:envelope: (https://flamboyant-brahmagupta-de75c5.netlify.app/brackets) :envelope:
+:envelope: [react-assignment](https://flamboyant-brahmagupta-de75c5.netlify.app/brackets) :envelope:
 
 ### Running The App locally
 
