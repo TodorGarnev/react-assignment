@@ -2,9 +2,7 @@ import React, { FunctionComponent } from "react";
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 
-interface Props { }
-
-const Header: FunctionComponent<Props> = (props) => {
+const Header: FunctionComponent = () => {
   return (
     <nav>
       <ul className={styles.navigation}>

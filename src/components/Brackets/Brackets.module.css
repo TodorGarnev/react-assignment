@@ -18,6 +18,12 @@
   outline-color: blueviolet;
 }
 
+.example {
+  margin-top: 0.2rem;
+  font-size: 12px;
+  text-align: center;
+}
+
 .message {
   margin-top: 1rem;
   text-align: center;
@@ -41,4 +47,12 @@
   border: none;
   border-radius: 0;
   outline-color: blueviolet;
+}
+
+.validationButton:disabled {
+  opacity: 0.7;
+}
+
+.validationButton:disabled:hover {
+  cursor: not-allowed;
 }

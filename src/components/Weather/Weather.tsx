@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from "react";
-import styles from './Weather.module.css';
 
+import styles from './Weather.module.css';
 import Day from './Day/Day';
 import weatherData from '../../shared/data/weather.json';
 import dateTransform from '../../shared/utility/dateTransform';
@@ -44,20 +44,22 @@ const Weather: FunctionComponent = () => {
 				Switch to {tempType === TempType.Celsius ? TempType.Fahrenheit : TempType.Celsius}
 			</button>
 			<section className={styles.weatherContainer}>
-				{data.map((weekDay, index) =>
-					<Day
+				{data.map((weekDay, index) => {
+					const { weekDayName, temperature, iconName, sunrise, rainStatusPerc, wind } = weekDay
+					return (<Day
 						key={index}
-						name={weekDay.weekDayName}
-						minTemp={weekDay.temperature.min}
-						maxTemp={weekDay.temperature.max}
-						icon={weekDay.iconName}
-						sunrise={dateTransform(weekDay.sunrise)}
-						rainStatus={weekDay.rainStatusPerc}
-						wind={weekDay.wind}
+						name={weekDayName}
+						minTemp={temperature.min}
+						maxTemp={temperature.max}
+						icon={iconName}
+						sunrise={dateTransform(sunrise)}
+						rainStatus={rainStatusPerc}
+						wind={wind}
 						tempType={tempType}
-						isActive={weekDay.weekDayName === selectedDay}
+						isActive={weekDayName === selectedDay}
 						activeDay={setActiveDay}
 					/>)
+				})
 				}
 			</section>
 		</React.Fragment>
