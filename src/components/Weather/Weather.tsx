@@ -40,6 +40,9 @@ const Weather: FunctionComponent = () => {
 
 	return (
 		<React.Fragment>
+			<button className={styles.switchButton} type="button" onClick={() => tempTransform()}>
+				Switch to {tempType === TempType.Celsius ? TempType.Fahrenheit : TempType.Celsius}
+			</button>
 			<section className={styles.weatherContainer}>
 				{data.map((weekDay, index) =>
 					<Day
@@ -57,9 +60,6 @@ const Weather: FunctionComponent = () => {
 					/>)
 				}
 			</section>
-			<button className={styles.switchButton} type="button" onClick={() => tempTransform()}>
-				Switch to {tempType === TempType.Celsius ? TempType.Fahrenheit : TempType.Celsius}
-			</button>
 		</React.Fragment>
 	);
 };
